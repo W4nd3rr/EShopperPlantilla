@@ -1,19 +1,18 @@
 {
-  "name": "eshopper",
+  "name": "eshopper-modular",
   "version": "1.0.0",
+  "description": "EShopper con arquitectura modular EJS",
   "type": "module",
-  "description": "",
-  "main": "index.js",
-  "directories": {
-    "lib": "lib"
-  },
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node ./src/server.js",
+    "dev": "nodemon ./src/server.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
-    "express": "^5.2.1"
+    "ejs": "^3.1.10",
+    "express": "^4.22.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
   }
 }

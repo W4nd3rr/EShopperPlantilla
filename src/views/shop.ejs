@@ -1,0 +1,67 @@
+<%- include('partials/head') %>
+<%- include('partials/navbar') %>
+
+            <!-- Page Header Start -->
+            <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 150px">
+                <h1 class="font-weight-semi-bold text-uppercase mb-3">Our Shop</h1>
+                <div class="d-inline-flex">
+                    <p class="m-0"><a href="/">Home</a></p>
+                    <p class="m-0 px-2">-</p>
+                    <p class="m-0">Shop</p>
+                </div>
+            </div>
+            <!-- Page Header End -->
+
+        </div>
+    </div>
+</div>
+<!-- Navbar End -->
+
+
+<!-- Shop Start -->
+<div class="container-fluid pt-5">
+    <div class="row px-xl-5">
+        <!-- Sidebar -->
+        <div class="col-lg-3 col-md-12">
+            <div class="border-bottom mb-4 pb-4">
+                <h5 class="font-weight-semi-bold mb-4">Filter by price</h5>
+                <input type="range" class="custom-range w-100" min="0" max="1000" value="500">
+                <div class="d-flex align-items-center justify-content-between">
+                    <span>$0</span><span>$1000</span>
+                </div>
+            </div>
+            <div class="border-bottom mb-4 pb-4">
+                <h5 class="font-weight-semi-bold mb-4">Filter by color</h5>
+                <% ['Black','White','Red','Blue','Green','Yellow'].forEach(function(color){ %>
+                <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                    <input type="checkbox" class="custom-control-input" id="color-<%= color %>">
+                    <label class="custom-control-label" for="color-<%= color %>"><%= color %></label>
+                    <span class="badge border font-weight-normal">150</span>
+                </div>
+                <% }); %>
+            </div>
+            <div class="mb-5">
+                <h5 class="font-weight-semi-bold mb-4">Filter by size</h5>
+                <% ['XS','S','M','L','XL','XXL'].forEach(function(size){ %>
+                <div class="custom-control custom-checkbox d-flex align-items-center justify-content-between mb-3">
+                    <input type="checkbox" class="custom-control-input" id="size-<%= size %>">
+                    <label class="custom-control-label" for="size-<%= size %>"><%= size %></label>
+                    <span class="badge border font-weight-normal">150</span>
+                </div>
+                <% }); %>
+            </div>
+        </div>
+
+        <!-- Products Grid -->
+        <div class="col-lg-9 col-md-12">
+            <div class="row pb-3">
+                <% productos.forEach(function(product) { %>
+                    <%- include('partials/product-card', { product: product }) %>
+                <% }); %>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Shop End -->
+
+<%- include('partials/footer') %>
